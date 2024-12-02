@@ -12,7 +12,10 @@ main solvePart1 solvePart2 parseInput =
       case part of
         "1" -> printSolution $ solvePart1 input
         "2" -> printSolution $ solvePart2 input
-        _ -> IO.hPutStrLn IO.stderr "Expected 1 or 2 for part" >> exitFailure
-    _ -> IO.hPutStrLn IO.stderr "Usage: <exe> <1 or 2> <input_file>" >> exitFailure
+        "0" -> do
+          printSolution $ solvePart1 input
+          printSolution $ solvePart2 input
+        _ -> IO.hPutStrLn IO.stderr "Expected 0 or 1 or 2 for part" >> exitFailure
+    _ -> IO.hPutStrLn IO.stderr "Usage: <exe> <0 or 1 or 2> <input_file>" >> exitFailure
   where
     printSolution s = putStrLn $ "=== " <> show s <> " ==="

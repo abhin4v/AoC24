@@ -22,11 +22,11 @@ clean:
     cabal clean
 
 # run the solution for a day and a part
-@run day part input=("inputs/" + day + ".txt"): (build day)
+@run day part="0" input=("inputs/" + day + ".txt"): (build day)
     {{ join(build-path, "x/" + day + "/noopt/build/" + day + "/" + day) }} {{ part }} {{ input }}
 
 # run the optimized solution for a day and a part
-@run-opt day part input=("inputs/" + day + ".txt"): (build-opt day)
+@run-opt day part="0" input=("inputs/" + day + ".txt"): (build-opt day)
     {{ join(build-path, "x/" + day + "/opt/build/" + day + "/" + day) }} {{ part }} {{ input }}
 
 # run the solutions for both parts of all days
@@ -40,6 +40,5 @@ run-all opt="":
         echo ""; \
         echo ">>> Running $day, part 2"; \
         just --no-deps run{{ opt }} "$day" 2; \
-        echo ""; \
         echo ""; \
     done
