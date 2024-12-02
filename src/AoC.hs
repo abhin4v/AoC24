@@ -1,5 +1,6 @@
 module AoC (main) where
 
+import Data.Time (diffUTCTime, getCurrentTime)
 import System.Environment (getArgs)
 import System.Exit (exitFailure)
 import System.IO qualified as IO
@@ -18,4 +19,8 @@ main solvePart1 solvePart2 parseInput =
         _ -> IO.hPutStrLn IO.stderr "Expected 0 or 1 or 2 for part" >> exitFailure
     _ -> IO.hPutStrLn IO.stderr "Usage: <exe> <0 or 1 or 2> <input_file>" >> exitFailure
   where
-    printSolution s = putStrLn $ "=== " <> show s <> " ==="
+    printSolution s = do
+      start <- getCurrentTime
+      putStrLn $ "=== " <> show s <> " ==="
+      elapsed <- flip diffUTCTime start <$> getCurrentTime
+      putStrLn $ "(" <> show elapsed <> ")"

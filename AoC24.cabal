@@ -16,8 +16,8 @@ extra-doc-files: CHANGELOG.md
 
 common common-config
   build-depends:
-    , base  >=4.18 && <4.22
-    , text  ^>=2   || ^>=2.1
+    , base        >=4.18 && <4.22
+    , text        ^>=2   || ^>=2.1
     , utility-ht
 
   default-language:   GHC2021
@@ -53,6 +53,7 @@ common common-exe-config
 
 library
   import:          common-config
+  build-depends:   time
   exposed-modules: AoC
   hs-source-dirs:  src
 
