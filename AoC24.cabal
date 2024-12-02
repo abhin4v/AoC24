@@ -18,6 +18,7 @@ common common-config
   build-depends:
     , base  >=4.18 && <4.22
     , text  ^>=2   || ^>=2.1
+    , utility-ht
 
   default-language:   GHC2021
   default-extensions:
@@ -58,3 +59,7 @@ library
 executable Day1
   import:  common-exe-config
   main-is: Day1.hs
+
+executable Day2
+  import:  common-exe-config
+  main-is: Day2.hs
