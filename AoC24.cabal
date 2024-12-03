@@ -19,6 +19,7 @@ common common-config
     , base        >=4.18 && <4.22
     , text        ^>=2   || ^>=2.1
     , utility-ht
+    , regex-tdfa
 
   default-language:   GHC2021
   default-extensions:
@@ -64,3 +65,7 @@ executable Day1
 executable Day2
   import:  common-exe-config
   main-is: Day2.hs
+
+executable Day3
+  import:  common-exe-config
+  main-is: Day3.hs
