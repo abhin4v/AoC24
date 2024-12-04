@@ -14,12 +14,12 @@ myHaskellPackages.shellFor {
     [
       ghc
       cabal-install
+      just
     ]
     ++ lib.optional devTools [
       niv
       hlint
       ormolu
-      just
       nixfmt-rfc-style
       (ghc.withPackages (p: [
         p.haskell-language-server

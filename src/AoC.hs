@@ -1,4 +1,4 @@
-module AoC (main) where
+module AoC where
 
 import Data.Time (diffUTCTime, getCurrentTime)
 import System.Environment (getArgs)
