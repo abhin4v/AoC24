@@ -17,6 +17,7 @@ common common-config
   build-depends:
     , base        >=4.18 && <4.22
     , containers
+    , massiv
     , regex-tdfa
     , text        ^>=2   || ^>=2.1
     , utility-ht
@@ -47,7 +48,7 @@ common common-exe-config
   import:         common-config
   build-depends:  AoC24
   hs-source-dirs: app
-  ghc-options:    -funbox-strict-fields
+  ghc-options:    -funbox-strict-fields -threaded -rtsopts -with-rtsopts=-N
 
   if os(linux)
     ghc-options: -optl=-no-pie
@@ -74,8 +75,5 @@ executable Day3
   main-is: Day3.hs
 
 executable Day4
-  import:        common-exe-config
-  main-is:       Day4.hs
-  build-depends:
-    , grid
-    , massiv
+  import:  common-exe-config
+  main-is: Day4.hs
