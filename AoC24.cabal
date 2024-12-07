@@ -26,7 +26,6 @@ common common-config
   default-extensions:
     DerivingStrategies
     LambdaCase
-    OverloadedStrings
     RecordWildCards
 
   ghc-options:
@@ -77,3 +76,8 @@ executable Day3
 executable Day4
   import:  common-exe-config
   main-is: Day4.hs
+
+executable Day6
+  import:  common-exe-config
+  main-is: Day6.hs
+  build-depends: ansi-terminal
