@@ -81,3 +81,7 @@ executable Day6
   import:  common-exe-config
   main-is: Day6.hs
   build-depends: ansi-terminal
+
+executable Day7
+  import:  common-exe-config
+  main-is: Day7.hs
