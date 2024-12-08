@@ -7,6 +7,11 @@ iterateMaybe f x = case f x of
   Nothing -> [x]
   Just y -> x : iterateMaybe f y
 
+ensure :: (a -> Bool) -> a -> Maybe a
+ensure p v
+  | p v = Just v
+  | otherwise = Nothing
+
 ordNub :: (Ord a) => [a] -> [a]
 ordNub = ordNubBy id
 
