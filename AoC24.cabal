@@ -27,6 +27,7 @@ common common-config
     DerivingStrategies
     LambdaCase
     RecordWildCards
+    MultiWayIf
 
   ghc-options:
     -Weverything -Wno-all-missed-specialisations -Wno-deriving-typeable
@@ -77,9 +78,13 @@ executable Day4
   import:  common-exe-config
   main-is: Day4.hs
 
-executable Day6
+executable Day5
   import:  common-exe-config
-  main-is: Day6.hs
+  main-is: Day5.hs
+
+executable Day6
+  import:        common-exe-config
+  main-is:       Day6.hs
   build-depends: ansi-terminal
 
 executable Day7
