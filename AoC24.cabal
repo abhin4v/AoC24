@@ -17,9 +17,6 @@ common common-config
   build-depends:
     , base        >=4.18 && <4.22
     , containers
-    , massiv
-    , regex-tdfa
-    , text        ^>=2   || ^>=2.1
     , utility-ht
 
   default-language:   GHC2021
@@ -71,12 +68,14 @@ executable Day2
   main-is: Day2.hs
 
 executable Day3
-  import:  common-exe-config
-  main-is: Day3.hs
+  import:        common-exe-config
+  main-is:       Day3.hs
+  build-depends: regex-tdfa
 
 executable Day4
-  import:  common-exe-config
-  main-is: Day4.hs
+  import:        common-exe-config
+  main-is:       Day4.hs
+  build-depends: massiv
 
 executable Day5
   import:  common-exe-config
@@ -86,6 +85,7 @@ executable Day6
   import:        common-exe-config
   main-is:       Day6.hs
   build-depends: ansi-terminal
+  build-depends: massiv
 
 executable Day7
   import:  common-exe-config
