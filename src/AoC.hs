@@ -5,7 +5,7 @@ import System.Environment (getArgs)
 import System.Exit (exitFailure)
 import System.IO qualified as IO
 
-main :: (Show a1, Show a2) => (t -> a1) -> (t -> a2) -> (String -> t) -> IO ()
+main :: (t -> Int) -> (t -> Int) -> (String -> t) -> IO ()
 main solvePart1 solvePart2 parseInput =
   getArgs >>= \case
     [part, inputFile] -> do

@@ -90,3 +90,7 @@ executable Day6
 executable Day7
   import:  common-exe-config
   main-is: Day7.hs
+
+executable Day8
+  import:  common-exe-config
+  main-is: Day8.hs
