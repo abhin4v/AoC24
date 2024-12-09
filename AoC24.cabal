@@ -23,8 +23,8 @@ common common-config
   default-extensions:
     DerivingStrategies
     LambdaCase
-    RecordWildCards
     MultiWayIf
+    RecordWildCards
 
   ghc-options:
     -Weverything -Wno-all-missed-specialisations -Wno-deriving-typeable
@@ -56,6 +56,7 @@ library
   exposed-modules:
     AoC
     AoC.List
+    AoC.Monad
 
   hs-source-dirs:  src
 
@@ -84,8 +85,9 @@ executable Day5
 executable Day6
   import:        common-exe-config
   main-is:       Day6.hs
-  build-depends: ansi-terminal
-  build-depends: massiv
+  build-depends:
+    , ansi-terminal
+    , massiv
 
 executable Day7
   import:  common-exe-config
@@ -94,3 +96,8 @@ executable Day7
 executable Day8
   import:  common-exe-config
   main-is: Day8.hs
+
+executable Day9
+  import:        common-exe-config
+  main-is:       Day9.hs
+  build-depends: vector
