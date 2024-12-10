@@ -2,7 +2,7 @@
   devTools ? true,
 }:
 let
-  pkgs = import <nixpkgs> { };
+  pkgs = import (import nix/sources.nix).nixpkgs { };
   myHaskellPackages = pkgs.haskellPackages.extend (
     final: prev: { aoc24 = import ./. { inherit pkgs; }; }
   );
