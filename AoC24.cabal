@@ -107,6 +107,11 @@ executable Day10
   import:  common-exe-config
   main-is: Day10.hs
 
+executable Day12
+  import:        common-exe-config
+  main-is:       Day12.hs
+  build-depends: massiv, graph-wrapper
+
 executable Day13
   import:  common-exe-config
   main-is: Day13.hs
