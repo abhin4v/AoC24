@@ -52,9 +52,10 @@ common common-exe-config
 
 library
   import:          common-config
-  build-depends:   time
+  build-depends:   time, pqueue
   exposed-modules:
     AoC
+    AoC.AStar
     AoC.List
     AoC.Monad
 
@@ -105,3 +106,8 @@ executable Day9
 executable Day10
   import:  common-exe-config
   main-is: Day10.hs
+
+executable Day13
+  import:  common-exe-config
+  main-is: Day13.hs
+  build-depends: linear
