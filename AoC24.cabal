@@ -120,3 +120,8 @@ executable Day13
   import:  common-exe-config
   main-is: Day13.hs
   build-depends: linear
+
+executable Day14
+  import:  common-exe-config
+  main-is: Day14.hs
+  build-depends: linear
