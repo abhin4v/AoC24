@@ -107,6 +107,10 @@ executable Day10
   import:  common-exe-config
   main-is: Day10.hs
 
+executable Day11
+  import:        common-exe-config
+  main-is:       Day11.hs
+
 executable Day12
   import:        common-exe-config
   main-is:       Day12.hs
