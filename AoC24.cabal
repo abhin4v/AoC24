@@ -52,7 +52,10 @@ common common-exe-config
 
 library
   import:          common-config
-  build-depends:   time, pqueue
+  build-depends:
+    , pqueue
+    , time
+
   exposed-modules:
     AoC
     AoC.AStar
@@ -108,20 +111,30 @@ executable Day10
   main-is: Day10.hs
 
 executable Day11
-  import:        common-exe-config
-  main-is:       Day11.hs
+  import:  common-exe-config
+  main-is: Day11.hs
 
 executable Day12
   import:        common-exe-config
   main-is:       Day12.hs
-  build-depends: massiv, graph-wrapper
+  build-depends:
+    , graph-wrapper
+    , massiv
 
 executable Day13
-  import:  common-exe-config
-  main-is: Day13.hs
+  import:        common-exe-config
+  main-is:       Day13.hs
   build-depends: linear
 
 executable Day14
-  import:  common-exe-config
-  main-is: Day14.hs
+  import:        common-exe-config
+  main-is:       Day14.hs
   build-depends: linear
+
+executable Day19
+  import:        common-exe-config
+  main-is:       Day19.hs
+  build-depends:
+    , bytestring
+    , bytestring-trie
+    , MemoTrie

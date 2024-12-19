@@ -32,7 +32,7 @@ clean:
 # run the solutions for both parts of all days
 run-all opt="":
     just build{{ opt }}
-    @for day in $(ls -d inputs/Day*.txt); do \
+    @for day in $(ls -vd inputs/Day*.txt); do \
         day=$(basename -s ".txt" $day); \
         echo ""; \
         echo ">>> Running $day, part 1"; \
