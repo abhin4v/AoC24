@@ -33,3 +33,9 @@ maybeM mn f mx = maybe mn f =<< mx
 whenMaybe :: (Applicative m) => Bool -> m a -> m (Maybe a)
 whenMaybe b mx = if b then Just <$> mx else pure Nothing
 {-# INLINE whenMaybe #-}
+
+iterateMaybeM :: (Monad m) => (a -> m (Maybe a)) -> a -> m [a]
+iterateMaybeM f x =
+  f x >>= \case
+    Nothing -> return [x]
+    Just y -> (x :) <$> iterateMaybeM f y

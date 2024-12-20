@@ -131,6 +131,13 @@ executable Day14
   main-is:       Day14.hs
   build-depends: linear
 
+executable Day15
+  import:        common-exe-config
+  main-is:       Day15.hs
+  build-depends:
+    , ansi-terminal
+    , massiv
+
 executable Day19
   import:        common-exe-config
   main-is:       Day19.hs
